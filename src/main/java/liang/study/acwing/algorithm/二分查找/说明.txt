@@ -1,0 +1,17 @@
+二分查找的本质是找边界的问题
+定中点、检查check函数是否通过、找边界
+其中可以分为找左边界和找右边界
+
+定中点
+mid=l+r/2
+
+检查check函数
+check(mid)
+
+找边界
+    左边界 check
+            true: r = mid
+            false: l = mid
+    右边界 check
+            true: l = mid
+            false: r = mid

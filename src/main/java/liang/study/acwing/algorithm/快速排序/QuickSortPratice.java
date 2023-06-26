@@ -17,23 +17,27 @@ public class QuickSortPratice {
         if(l >= r){
             return;
         }
+
         int x = q[l];
         int left = l - 1;
         int right = r + 1;
+
         while(left < right){
-            do{
+            do {
                 left++;
-            }while (q[left] < x);
+            }while(q[left] < x);
 
             do{
-                right--;
+                right --;
             }while (q[right] > x);
+
             if(left < right){
-                swap(q, left, right);
+                swap(q,left,right);
             }
         }
+
         quickSort(q,l,right);
-        quickSort(q,right + 1 , r);
+        quickSort(q,right + 1, r);
     }
 
     private static void swap(int[] q,int i,int j){

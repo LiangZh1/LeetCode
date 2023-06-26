@@ -17,37 +17,34 @@ public class MergeSortPratice {
         if(l >= r){
             return;
         }
+        int mid = (l + r) / 2;
+        mergeSort(q,l,mid);
+        mergeSort(q,mid + 1,r);
 
-        int mid = (l + r)/2;
-
-        mergeSort(q ,l ,mid);
-        mergeSort(q , mid+1 ,r);
-
-        int i = l;
-        int j = mid + 1;
-        int tempPtr = 0;
-
-        while(i <= mid && j <= r){
-            if(q[i] <= q[j]){
-                temp[tempPtr++] = q[i++];
-            }
-            if(q[i] > q[j]){
-                temp[tempPtr++] = q[j++];
+        int[] temp = new int[q.length];
+        int left = l;
+        int right = mid+1;
+        int point = 0;
+        while(left <= mid && right <= r){
+            if(q[left] < q[right]){
+                temp[point++] = q[left++];
+            }else {
+                temp[point++] = q[right++];
             }
         }
 
-        while(i <= mid){
-            temp[tempPtr++] = q[i++];
+        while (left <= mid){
+            temp[point++] = q[left++];
         }
 
-        while(j <= r){
-            temp[tempPtr++] = q[j++];
-        }
-        int a = 0;
-        for(int p = l ; p <= r ; p++){
-            q[p] = temp[a++];
+        while(right <= r){
+            temp[point++] = q[right++];
         }
 
+        int fuck = 0;
+        for (int a = l ; a <= r ; a++){
+            q[a] = temp[fuck++];
+        }
 
 
 
