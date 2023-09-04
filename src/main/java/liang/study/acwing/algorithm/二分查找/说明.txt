@@ -12,6 +12,6 @@ check(mid)
     左边界 check
             true: r = mid
             false: l = mid
-    右边界 check
+    右边界 checks
             true: l = mid
             false: r = mid
