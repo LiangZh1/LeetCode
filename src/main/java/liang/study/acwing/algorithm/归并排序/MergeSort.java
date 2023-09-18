@@ -12,6 +12,7 @@ public class MergeSort {
         for (int i : q) {
             System.out.print(i + ",");
         }
+
     }
 
     public static void mergeSort(int[] q,int l,int r){
